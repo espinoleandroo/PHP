@@ -12,15 +12,15 @@ class Database{
     // get the database connection
     public function getConnection(){
 
-        $this->$conexion = null;
+        $this->conexion = null;
 
         try{
-            $this->$conexion = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+            $this->conexion = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
         }catch(PDOException $exception){
             echo "Connection error: " . $exception->getMessage();
         }
 
-        return $this->$conexion;
+        return $this->conexion;
     }
 }
 ?>
